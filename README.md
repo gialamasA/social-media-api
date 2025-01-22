@@ -55,10 +55,13 @@ The server will be running on `http://localhost:3000`.
 ### Step 5: Add the PostgreSQL Server to pgAdmin
 
 1. Open [pgAdmin](http://localhost:5050).
-2. Add a new server with the following details:
+2. Login using:
+   - **email**: admin@example.com
+   - **password**: admin
+3. Add a new server with the following details:
+   - **Name**: `socialmediaapi`
    - **Host**: `db`
    - **Port**: `5432`
-   - **Database**: `socialmediaapi`
    - **Username**: `user`
    - **Password**: `password`
 
@@ -83,12 +86,33 @@ The server will be running on `http://localhost:3000`.
 
 ### Posts
 - **Create Post**: `POST /posts`
+```json
+  {
+  "content": "This is a post!"
+  }
+```
 - **Edit Post**: `PUT /posts/:id`
+```json
+  {
+  "content": "Updated post content!"
+  }
+```
 - **Delete Post**: `DELETE /posts/:id`
 - **Get Posts**: `GET /posts?page=1&limit=10`
 
 ### Comments
 - **Create Comment**: `POST /comments`
+```json
+  {
+  "postId": "29d985e0-d971-47a7-93be-d9b84996298c",
+  "comment": "This is a comment"
+  }
+```
 - **Edit Comment**: `PUT /comments/:id`
+```json
+  {
+  "comment": "Comment updated"
+  }
+```
 - **Delete Comment**: `DELETE /comments/:id`
 - **Get Comments**: `GET /comments?postId=<post_id>&page=1&limit=5`

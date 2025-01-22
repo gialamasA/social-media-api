@@ -8,23 +8,49 @@ const {
 const { authenticateToken } = require('../middlewares/authMiddleware');
 const {
   validateCreateComment,
-  validatePostId,
-  validatePagination,
+  validateCommentId,
+  validateGetComments,
+  validateEditComment,
   handleValidationErrors,
 } = require('../middlewares/validationMiddleware');
 
 const router = express.Router();
 
 // Create a new comment
-router.post('/', authenticateToken, validateCreateComment, handleValidationErrors, createComment);
+router.post(
+  '/',
+  authenticateToken,
+  validateCreateComment,
+  handleValidationErrors,
+  createComment
+);
 
 // Edit an existing comment
-router.put('/:id', authenticateToken, validatePostId, validateCreateComment, handleValidationErrors, editComment);
+router.put(
+  '/:id',
+  authenticateToken,
+  validateCommentId,
+  validateEditComment,
+  handleValidationErrors,
+  editComment
+);
 
 // Delete a comment
-router.delete('/:id', authenticateToken, validatePostId, handleValidationErrors, deleteComment);
+router.delete(
+  '/:id',
+  authenticateToken,
+  validateCommentId,
+  handleValidationErrors,
+  deleteComment
+);
 
 // Get comments for a post with pagination
-router.get('/', authenticateToken, validatePostId, validatePagination, handleValidationErrors, getComments);
+router.get(
+  '/',
+  authenticateToken,
+  validateGetComments,
+  handleValidationErrors,
+  getComments
+);
 
 module.exports = router;

@@ -104,7 +104,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/posts?page=1&limit=40",
+							"raw": "http://localhost:3000/posts?page=1&limit=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -120,7 +120,7 @@
 								},
 								{
 									"key": "limit",
-									"value": "40"
+									"value": "20"
 								}
 							]
 						}
@@ -128,12 +128,12 @@
 					"response": []
 				},
 				{
-					"name": "posts?userId=<user_id>",
+					"name": "posts?userId=<user_id>&page=<page>&limit=<limit>",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/posts?userId=db5cd624-a82b-4386-b633-3a1f544b76ff&page=1&limit=30",
+							"raw": "http://localhost:3000/posts?userId=89024f29-92f0-408f-91f2-375a96f9ddf7&page=1&limit=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -145,7 +145,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "db5cd624-a82b-4386-b633-3a1f544b76ff"
+									"value": "89024f29-92f0-408f-91f2-375a96f9ddf7"
 								},
 								{
 									"key": "page",
@@ -153,7 +153,7 @@
 								},
 								{
 									"key": "limit",
-									"value": "30"
+									"value": "20"
 								}
 							]
 						}
@@ -242,7 +242,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "b070f750-2352-4654-bda3-fff45ebf9343"
+									"value": "7e11793f-57c8-44bf-80a5-8f54e2cd8ded"
 								}
 							]
 						}
@@ -255,12 +255,12 @@
 			"name": "Comments",
 			"item": [
 				{
-					"name": "comments?postId=post-id-here&page=1&limit=5",
+					"name": "comments?postId=<post_id>&page=<page>&limit=<limit>",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/comments?postId=db918adf-cc53-4a98-a55a-b0e07ed7fe10&page=1&limit=30",
+							"raw": "http://localhost:3000/comments?postId=29d985e0-d971-47a7-93be-d9b84996298c&page=1&limit=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -272,7 +272,7 @@
 							"query": [
 								{
 									"key": "postId",
-									"value": "db918adf-cc53-4a98-a55a-b0e07ed7fe10"
+									"value": "29d985e0-d971-47a7-93be-d9b84996298c"
 								},
 								{
 									"key": "page",
@@ -280,7 +280,7 @@
 								},
 								{
 									"key": "limit",
-									"value": "30"
+									"value": "20"
 								}
 							]
 						}
@@ -294,7 +294,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"postId\": \"db918adf-cc53-4a98-a55a-b0e07ed7fe10\",\r\n  \"comment\": \"20\"\r\n}\r\n",
+							"raw": "{\r\n  \"postId\": \"29d985e0-d971-47a7-93be-d9b84996298c\",\r\n  \"comment\": \"This is a comment\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -322,7 +322,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"comment\": \"Updated comment content\"\r\n}\r\n",
+							"raw": "{\r\n  \"comment\": \"Comment updated\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -343,7 +343,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "f4b570bd-5e8b-41cc-b03a-d1a77670a0c2"
+									"value": "44e2a422-c28d-4afd-9c2a-4c27f57a0bd1"
 								}
 							]
 						}
@@ -369,7 +369,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "f4b570bd-5e8b-41cc-b03a-d1a77670a0c2"
+									"value": "44e2a422-c28d-4afd-9c2a-4c27f57a0bd1"
 								}
 							]
 						}
@@ -384,7 +384,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3YzljMTllLWFjYjItNGRjYS05M2YzLTEwOTdiNDZjZGVlNyIsImVtYWlsIjoidGVzdDJAZXhhbXBsZS5jb20iLCJpYXQiOjE3Mzc1Mzg2NTYsImV4cCI6MTczNzU0MjI1Nn0.S8wTsSLGHyRAILRX9RZZs0-hBxeQ3uCDwGR14pLYupc",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg5MDI0ZjI5LTkyZjAtNDA4Zi05MWYyLTM3NWE5NmY5ZGRmNyIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczNzU1NDg4NSwiZXhwIjoxNzM3NTU4NDg1fQ.QZBiQFRRA3NlYWDbGyTactwzA799Qly_5rQpDra4vsM",
 				"type": "string"
 			}
 		]
